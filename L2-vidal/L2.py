@@ -1,6 +1,6 @@
 import os
 import datetime
-import math
+from math import sqrt
 
 
 def my_log():
@@ -42,7 +42,8 @@ change_words_starting_with_a(["test", 1, "Apple"])
 def list_square_even_power_odd(list_range):
     if list_range:
         try:
-            modified_list_range = [math.sqrt(list_range.index(i)) if i % 2 == 0 else list_range.index(i) ^ 2 for i in list_range]
+            modified_list_range = [sqrt(list_range.index(i)) if i % 2 == 0 else list_range.index(i) ^ 2 for i in
+                                   list_range]
             print(modified_list_range)
         except Exception as e:
             print(e)
@@ -70,9 +71,25 @@ name_checker(["Emma", 23, "Jonathan J."])
 print("\n 5) List generators are lower level and thus much faster than generators. "
       "\n However, they take up much more memory space.")
 
-# def get_roots(first, second, third):
+def get_roots(first, second, third):
+    try:
+        calc = lambda a, b, c: (b + sqrt(b ** 2 - 4 * a * c)) / (2 * a)
+        print(calc(first, second, third))
+    except Exception as e:
+        print(e)
 
 
+print("\ne6 get_roots(first, second, third):")
+print(get_roots(3, 4, 5))
+print(get_roots(5, 2, 1))
 
 
-
+# def root(one, two, three):
+#     try:
+#         calc = lambda a, b, c: a + b + c
+#         return calc(one, two, three)
+#     except Exception as e:
+#         print(e)
+#
+#
+# print(root(3, 4, 5))
